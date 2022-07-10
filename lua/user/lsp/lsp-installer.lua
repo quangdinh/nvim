@@ -6,11 +6,13 @@ end
 local servers = {
   "bashls", "clangd", "dartls",  "cssls",  "dockerls", "gopls", "graphql", "jsonls",
   "tsserver", "marksman", "sumneko_lua", "kotlin_language_server",
-  "intelephense", "pyright", "solargraph", "rust_analyzer", "sqlls", "sourcekit",
+  "pyright", "solargraph", "rust_analyzer", "sqlls", "sourcekit",
   "yamlls", "html"
 }
 
-lsp_installer.setup()
+lsp_installer.setup({
+	ensure_installed = servers,
+})
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
