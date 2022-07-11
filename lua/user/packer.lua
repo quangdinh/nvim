@@ -69,6 +69,7 @@ return packer.startup(function(use)
   use { "williamboman/nvim-lsp-installer", commit = "33700e2de88699caa064e94e9642f244b26ac014" } -- simple to use language server installer
   use { "jose-elias-alvarez/null-ls.nvim", commit = "fbb1929b29beff82e0fc495670f00ef4b3bcbcd3" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "6bfa5dc069bd4aa8513a3640d0b73392094749be" }
+  use { "folke/trouble.nvim" }
 
   -- Toggle term with <C-\>
   use { "akinsho/toggleterm.nvim", commit = "8cba5c20c9d8517af21ac9e2afd06ad7b2dbdece" }
