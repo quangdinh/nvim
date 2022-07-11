@@ -11,7 +11,10 @@ local servers = {
 }
 
 lsp_installer.setup({
-	ensure_installed = servers,
+	ensure_installed = {
+    "bashls", "cssls", "dockerls", "gopls", "jsonls", "tsserver", "sumneko_lua", 
+    "pyright", "rust_analyzer", "html", "kotlin_language_server"
+  },
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
