@@ -5,15 +5,15 @@ end
 
 local servers = {
   "bashls", "clangd", "dartls",  "cssls",  "dockerls", "gopls", "graphql", "jsonls",
-  "tsserver", "marksman", "sumneko_lua", "kotlin_language_server",
+  "tsserver", "marksman", "lua_ls", "kotlin_language_server",
   "pyright", "solargraph", "rust_analyzer", "sqlls", "sourcekit",
   "yamlls", "html"
 }
 
 lsp_installer.setup({
 	ensure_installed = {
-    "bashls", "cssls", "dockerls", "gopls", "jsonls", "tsserver", "sumneko_lua", 
-    "pyright", "rust_analyzer", "html", "kotlin_language_server"
+    "dockerls", "gopls", "jsonls", "tsserver",  
+    "rust_analyzer", "lua_ls" 
   },
 })
 
