@@ -10,12 +10,10 @@ local servers = {
 local M = {
   {
     "neovim/nvim-lspconfig",
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp"
     },
     config = function()
       vim.diagnostic.config({
@@ -52,7 +50,7 @@ local M = {
           vim.keymap.set("n", "<leader>ln", vim.diagnostic.goto_next, opts)
           vim.keymap.set("n", "<leader>lp", vim.diagnostic.goto_prev, opts)
           vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
-          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+          vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, opts)
           vim.keymap.set("n", "<leader>wa",
               vim.lsp.buf.add_workspace_folder, opts)
           vim.keymap.set("n", "<leader>wr",

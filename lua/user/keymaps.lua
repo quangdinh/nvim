@@ -16,6 +16,9 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- Normal --
+-- Delete buffer --
+keymap("n", "<C-q>", ":bdelete<CR>", opts)
+
 -- Line numbers
 keymap("n", "<leader>l", "<cmd>lua toggle_linenumbers()<CR>", opts)
 
