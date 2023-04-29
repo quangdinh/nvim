@@ -9,11 +9,26 @@ local servers = {
 
 local M = {
   {
+    "williamboman/mason.nvim",
+    cmd = "Mason",
+    opts = {
+      ui = {
+        icons = {
+          server_installed = "✓",
+          server_pending = "o",
+          server_uninstalled = ""
+        }
+      }
+    }
+  },
+  {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
       vim.diagnostic.config({
@@ -64,36 +79,23 @@ local M = {
           vim.keymap.set("n", "<leader>so",
               require("telescope.builtin").lsp_document_symbols, opts)
       end
+      local masonlsp = require("mason-lspconfig")
+      masonlsp.setup({})
 
       -- nvim-cmp supports additional completion capabilities
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-      for _, server in ipairs(servers) do
+      masonlsp.setup_handlers({
+        function(server)
           local opts = {
-              on_attach = on_attach,
-              capabilities = capabilities,
+            on_attach = on_attach,
+            capabilities = capabilities,
           }
-
           lspconfig[server].setup(opts)
-      end
--- { ensure_installed = servers }
-      require("mason-lspconfig").setup()
+        end
+      })    
   end
-  },
-  {
-    "williamboman/mason.nvim",
-    cmd = "Mason",
-    -- opts = { ensure_installed = servers },
-    opts = {
-      ui = {
-        icons = {
-          server_installed = "✓",
-          server_pending = "o",
-          server_uninstalled = ""
-        }
-      }
-    }
   }
 }
 
