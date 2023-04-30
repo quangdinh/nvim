@@ -99,6 +99,7 @@ local M = {
   },
   {
     "ray-x/lsp_signature.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       local cfg = {
         hint_enable = false, -- virtual hint enable
