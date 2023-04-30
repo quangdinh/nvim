@@ -20,7 +20,16 @@ vim.g.mapleader = " "
 keymap("n", "<C-q>", ":bdelete<CR>", opts)
 
 -- Line numbers
-keymap("n", "<leader>l", "<cmd>lua toggle_linenumbers()<CR>", opts)
+keymap("n", "<leader>ll", "<cmd>lua toggle_linenumbers()<CR>", opts)
+
+-- Lazygit
+keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+
+-- Lazy UI
+keymap("n", "<leader>lz", ":Lazy<CR>", opts)
+
+-- Mason UI
+keymap("n", "<leader>ms", ":Mason<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -29,10 +38,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-w>.", ":vertical resize -5<CR>", opts)
-keymap("n", "<C-w>,", ":vertical resize +5<CR>", opts)
+keymap("n", "<leader>wj", ":resize -2<CR>", opts)
+keymap("n", "<leader>wk", ":resize +2<CR>", opts)
+keymap("n", "<leader>wl", ":vertical resize -5<CR>", opts)
+keymap("n", "<leader>wh", ":vertical resize +5<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
