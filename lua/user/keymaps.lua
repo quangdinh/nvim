@@ -25,6 +25,7 @@ keymap("n", "<leader>ll", "<cmd>lua toggle_linenumbers()<CR>", opts)
 -- Lazygit
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+keymap("n", "<leader>lf", ":Neoformat<CR>", opts)
 -- Lazy UI
 keymap("n", "<leader>lz", ":Lazy<CR>", opts)
 

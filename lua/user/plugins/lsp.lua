@@ -64,7 +64,6 @@ local M = {
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "<leader>ln", vim.diagnostic.goto_next, opts)
           vim.keymap.set("n", "<leader>lp", vim.diagnostic.goto_prev, opts)
-          vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
           vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, opts)
           vim.keymap.set("n", "<leader>wa",
               vim.lsp.buf.add_workspace_folder, opts)

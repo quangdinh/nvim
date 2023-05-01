@@ -7,7 +7,18 @@ local M = {
   enable_check_bracket_line = false,
   config = function()
     local autopairs = require("nvim-autopairs")
-    autopairs.setup()
+    autopairs.setup({
+      fast_wrap = {
+        map = '<C-e>',
+        chars = { '{', '[', '(', '"', "'" },
+        pattern = [=[[%'%"%>%]%)%}%,]]=],
+        end_key = '$',
+        keys = 'qwertyuiopzxcvbnmasdfghjkl',
+        check_comma = true,
+        highlight = 'Search',
+        highlight_grey='Comment'
+      },
+    })
     local cmp_autopairs = require('nvim-autopairs.completion.cmp')
     local cmp = require('cmp')
     cmp.event:on(
