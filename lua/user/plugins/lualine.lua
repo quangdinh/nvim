@@ -5,23 +5,7 @@ local M = {
   },
   config = function()
     local lualine = require("lualine")
-    -- Color table for highlights
-    -- stylua: ignore
-    local colors = {
-      bg       = '#191919',
-      bg_dark  = '#111111',
-      bg_light = '#333333',
-      fg       = '#bbc2cf',
-      yellow   = '#f0c674',
-      cyan     = '#8abeb7',
-      darkblue = '#81a2be',
-      green    = '#b5bd68',
-      orange   = '#cc6666',
-      violet   = '#b294bb',
-      magenta  = '#b294bb',
-      blue     = '#81a2be',
-      red      = '#cc6666',
-    }
+    local colors = require("onedarkpro.helpers").get_colors()
 
     local conditions = {
       buffer_not_empty = function()
@@ -47,8 +31,8 @@ local M = {
           -- We are going to use lualine_c an lualine_x as left and
           -- right section. Both are highlighted by c theme .  So we
           -- are just setting default looks o statusline
-          normal = { c = { fg = colors.fg, bg = colors.bg } },
-          inactive = { c = { fg = colors.fg, bg = colors.bg } },
+          normal = { c = { fg = colors.fg, bg = colors.bg_light } },
+          inactive = { c = { fg = colors.fg, bg = colors.bg_light } },
         },
       },
       sections = {
@@ -84,21 +68,21 @@ local M = {
 
     ins_left {
       'branch',
-      icon = '',
-      color = { fg = colors.violet, gui = 'bold', bg = colors.bg_light },
+      icon = '',
+      color = { fg = colors.purple, gui = 'bold', bg = colors.bg_lighter },
     }
 
     ins_left {
       'diff',
       -- Is it me or the symbol for modified us really weird
-      symbols = { added = ' ', modified = '柳', removed = ' ' },
+      symbols = { added = ' ', modified = ' ', removed = ' ' },
       diff_color = {
         added = { fg = colors.green },
         modified = { fg = colors.orange },
         removed = { fg = colors.red },
       },
       cond = conditions.hide_in_width,
-      color = { bg = colors.bg_light }
+      color = { bg = colors.bg_lighter }
     }
 
     ins_left {
@@ -112,14 +96,14 @@ local M = {
           v = colors.blue,
           [''] = colors.blue,
           V = colors.blue,
-          c = colors.magenta,
+          c = colors.purple,
           no = colors.red,
           s = colors.orange,
           S = colors.orange,
           [''] = colors.orange,
           ic = colors.yellow,
-          R = colors.violet,
-          Rv = colors.violet,
+          R = colors.purple,
+          Rv = colors.purple,
           cv = colors.red,
           ce = colors.red,
           r = colors.cyan,
@@ -150,7 +134,7 @@ local M = {
         end
         return msg
       end,
-      icon = '',
+      icon = ' ',
       color = { fg = colors.blue, gui = 'bold' },
     }
 
@@ -211,7 +195,7 @@ local M = {
     ins_right {
       'filename',
       cond = conditions.buffer_not_empty,
-      color = { fg = colors.magenta, gui = 'bold' },
+      color = { fg = colors.purple, gui = 'bold' },
     }
 
     ins_right { 'location' }
