@@ -8,16 +8,20 @@ local M = {
     local bufferline = require("bufferline")
     bufferline.setup {
       options = {
+        indicator = {
+          icon = "",
+          style = 'icon'
+        },
         close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-        offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-        separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+        offsets = { { filetype = "NvimTree", text = "File Explorer", padding = 1 } },
+        separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
         diagnostics = "nvim_lsp",
-        iagnostics_indicator = function(count, level, diagnostics_dict, context)
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
           local s = " "
           for e, n in pairs(diagnostics_dict) do
-            local sym = e == "error" and " "
-              or (e == "warning" and " " or "" )
+            local sym = e == "error" and "  "
+              or (e == "warning" and "  " or " 󰋽 " )
             s = s .. n .. sym
           end
           return s
