@@ -32,12 +32,6 @@ keymap("n", "<leader>lz", ":Lazy<CR>", opts)
 -- Mason UI
 keymap("n", "<leader>ms", ":Mason<CR>", opts)
 
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Resize with arrows
 keymap("n", "<leader>wj", ":resize -2<CR>", opts)
 keymap("n", "<leader>wk", ":resize +2<CR>", opts)
