@@ -1,6 +1,6 @@
 local M = {
   "ggandor/leap.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "BufEnter" },
   config = function()
     local leap = require("leap")
     leap.add_default_mappings()
