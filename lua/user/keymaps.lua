@@ -35,12 +35,12 @@ keymap("n", "<leader>ms", ":Mason<CR>", opts)
 -- Resize with arrows
 keymap("n", "<leader>wj", ":resize -2<CR>", opts)
 keymap("n", "<leader>wk", ":resize +2<CR>", opts)
-keymap("n", "<leader>wl", ":vertical resize -5<CR>", opts)
-keymap("n", "<leader>wh", ":vertical resize +5<CR>", opts)
+keymap("n", "<leader>wh", ":vertical resize -5<CR>", opts)
+keymap("n", "<leader>wl", ":vertical resize +5<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<C-j>", ":m .+1<CR>==", opts)
+keymap("n", "<C-k>", ":m .-2<CR>==", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
