@@ -5,8 +5,8 @@ local M = {
 		local onedark = require("onedarkpro")
 		onedark.setup({
 			colors = {
-        bg = "#111111",
-        bg_light = "#191919",
+        bg = "#191919",
+        bg_light = "#26292c",
 				bg_lighter = "#26292c",
 				fg = "#cfd2d0",
 				red = "#d77b79",
@@ -22,7 +22,7 @@ local M = {
 				highlight = "#e2be7d",
 				comment = "#7f848e",
 				none = "NONE",
-				cursorline = "#191919", -- This is optional. The default cursorline color is based on the background
+				cursorline = "#26292c", -- This is optional. The default cursorline color is based on the background
 			},
 			options = {
 				cursorline = true,

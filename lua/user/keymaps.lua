@@ -3,10 +3,10 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
---Remap space as leader key
 keymap("", " ", "<Nop>", opts)
 vim.g.mapleader = " "
 
+--Remap space as leader key
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -32,7 +32,7 @@ keymap("n", "<leader>lz", ":Lazy<CR>", opts)
 -- Mason UI
 keymap("n", "<leader>ms", ":Mason<CR>", opts)
 
--- Resize with arrows
+-- Resizing panes
 keymap("n", "<leader>wj", ":resize -2<CR>", opts)
 keymap("n", "<leader>wk", ":resize +2<CR>", opts)
 keymap("n", "<leader>wh", ":vertical resize -5<CR>", opts)
@@ -41,19 +41,24 @@ keymap("n", "<leader>wl", ":vertical resize +5<CR>", opts)
 -- Move text up and down
 keymap("n", "<C-j>", ":m .+1<CR>==", opts)
 keymap("n", "<C-k>", ":m .-2<CR>==", opts)
+keymap("v", "<C-j>", ":m -2<CR>gv=gv", opts)
+keymap("v", "<C-k>", ":m'>+<CR>gv=gv", opts)
+
 
 -- Navigate buffers
+keymap("n", "<Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
--- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
 -- Better paste
 keymap("v", "p", '"_dP', opts)
+
+-- Undo with capital U
+keymap("n", "U", ":redo")
 
 -- Insert --
 -- Press jk fast to enter
@@ -64,10 +69,12 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+keymap("n", "<CR>", "ciw", opts)
+
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
