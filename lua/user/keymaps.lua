@@ -17,7 +17,7 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Delete buffer --
-keymap("n", "<C-q>", ":bdelete<CR>", opts)
+keymap("n", "<C-q>", ":Bdelete<CR>", opts)
 
 -- Line numbers
 keymap("n", "<leader>ll", "<cmd>lua toggle_linenumbers()<CR>", opts)
@@ -58,7 +58,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Undo with capital U
-keymap("n", "U", ":redo")
+keymap("n", "U", ":redo<CR>")
 
 -- Insert --
 -- Press jk fast to enter
@@ -68,8 +68,6 @@ keymap("i", "jk", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
-keymap("n", "<CR>", "ciw", opts)
 
 -- Plugins --
 

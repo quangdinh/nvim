@@ -4,10 +4,15 @@ local M = {
 	config = function()
 		local onedark = require("onedarkpro")
 		onedark.setup({
+			highlights = {
+				NeoTreeNormal = { bg = "#090b0c" },
+				NeoTreeNormalNC = { bg = "#090b0c" },
+			},
+
 			colors = {
-        bg = "#191919",
-        bg_light = "#26292c",
-				bg_lighter = "#26292c",
+				bg = "#0d0f10",
+				bg_light = "#121416",
+				bg_lighter = "#31373c",
 				fg = "#cfd2d0",
 				red = "#d77b79",
 				orange = "#d19a66",
@@ -42,8 +47,11 @@ local M = {
 				conditionals = "italic",
 				virtual_text = "NONE",
 			},
+			plugins = {
+				neo_tree = true,
+			},
 		})
-    vim.cmd("colorscheme onedark")
+		vim.cmd("colorscheme onedark")
 	end,
 }
 

@@ -29,7 +29,7 @@ local M = {
     { "<c-space>", desc = "Increment selection" },
     { "<bs>", desc = "Decrement selection", mode = "x" },
   },
-  ---@type TSConfig
+  -- @type TSConfig
   opts = {
     highlight = { enable = true },
     indent = { enable = true },

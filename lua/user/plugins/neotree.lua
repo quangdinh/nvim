@@ -16,10 +16,10 @@ local config = {
 	default_component_configs = {
 		diagnostics = {
 			symbols = {
-				hint = "H",
-				info = "I",
-				warn = "!",
-				error = "X",
+				hint = "",
+				info = "󰋽",
+				warn = "",
+				error = "",
 			},
 			highlights = {
 				hint = "DiagnosticSignHint",
@@ -31,8 +31,8 @@ local config = {
 		icon = {
 			folder_closed = "",
 			folder_open = "",
-			folder_empty = "ﰊ",
-			folder_empty_open = "ﰊ",
+			folder_empty = "󰜌",
+			folder_empty_open = "󰜌",
 		},
 		modified = {
 			symbol = "[+] ",
@@ -40,10 +40,10 @@ local config = {
 		git_status = {
 			symbols = {
 				-- Change type
-				added = "✚", -- NOTE: you can set any of these to an empty string to not show them
-				deleted = "✖",
-				modified = "",
-				renamed = "󰁕",
+				added = "", -- NOTE: you can set any of these to an empty string to not show them
+				deleted = "",
+				modified = "",
+				renamed = "",
 				-- Status type
 				untracked = "",
 				ignored = "",
@@ -52,60 +52,6 @@ local config = {
 				conflict = "",
 			},
 			align = "right",
-		},
-	},
-	renderers = {
-		directory = {
-			{ "indent" },
-			{ "icon" },
-			{ "current_filter" },
-			{
-				"container",
-				content = {
-					{ "name", zindex = 10 },
-					-- {
-					--   "symlink_target",
-					--   zindex = 10,
-					--   highlight = "NeoTreeSymbolicLinkTarget",
-					-- },
-					{ "clipboard", zindex = 10 },
-					{ "diagnostics", errors_only = true, zindex = 20, align = "right", hide_when_expanded = true },
-					{ "git_status", zindex = 20, align = "right", hide_when_expanded = true },
-				},
-			},
-		},
-		file = {
-			{ "indent" },
-			{ "icon" },
-			{
-				"container",
-				content = {
-					{
-						"name",
-						zindex = 10,
-					},
-					-- {
-					--   "symlink_target",
-					--   zindex = 10,
-					--   highlight = "NeoTreeSymbolicLinkTarget",
-					-- },
-					{ "clipboard", zindex = 10 },
-					{ "bufnr", zindex = 10 },
-					{ "modified", zindex = 20, align = "right" },
-					{ "diagnostics", zindex = 20, align = "right" },
-					{ "git_status", zindex = 20, align = "right" },
-				},
-			},
-		},
-		message = {
-			{ "indent", with_markers = false },
-			{ "name", highlight = "NeoTreeMessage" },
-		},
-		terminal = {
-			{ "indent" },
-			{ "icon" },
-			{ "name" },
-			{ "bufnr" },
 		},
 	},
 
@@ -174,6 +120,7 @@ local config = {
 			["e"] = "toggle_auto_expand_width",
 			["q"] = "close_window",
 			["?"] = "show_help",
+      ["<Tab>"] = "next_source",
 			["<"] = "prev_source",
 			[">"] = "next_source",
 		},
@@ -279,7 +226,7 @@ local config = {
 		--end,
 		group_empty_dirs = false, -- when true, empty folders will be grouped together
 		search_limit = 50, -- max number of search results when using filters
-		follow_current_file = false, -- This will find and focus the file in the active buffer every time
+		follow_current_file = true, -- This will find and focus the file in the active buffer every time
 		-- the current file is changed while the tree is open.
 		hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
 		-- in whatever position is specified in window.position
