@@ -4,6 +4,7 @@ local M = {
 		local gitsigns = require("gitsigns")
 		gitsigns.setup()
 	end,
+	cmd = "Gitsigns",
 }
 
 return M
