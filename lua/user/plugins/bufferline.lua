@@ -8,6 +8,7 @@ local M = {
 		local bufferline = require("bufferline")
 		bufferline.setup({
 			options = {
+				-- mode = "tabs",
 				close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 				right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 				offsets = { { filetype = "neo-tree", text = "Explorer" } },
