@@ -46,8 +46,6 @@ keymap("v", "<C-k>", ":m'>+<CR>gv=gv", opts)
 
 
 -- Navigate buffers
-keymap("n", "<Tab>", ":bnext<CR>", opts)
-keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
@@ -94,8 +92,6 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
-keymap("n", "<leader>o", "<cmd>SymbolsOutline<cr>", opts)
 
 -- LSP Diagnostic with Trouble
 keymap("n", "<leader>xx", "<cmd>Trouble workspace_diagnostics<cr>", opts)
