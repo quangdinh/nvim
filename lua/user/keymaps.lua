@@ -15,15 +15,20 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("n", "<leader>ta", "<cmd>Neotest attach<CR>", opts)
+keymap("n", "<leader>to", "<cmd>Neotest output<CR>", opts)
+keymap("n", "<leader>tp", "<cmd>Neotest output-panel<CR>", opts)
+keymap("n", "<leader>tr", "<cmd>Neotest run<CR>", opts)
+keymap("n", "<leader>ts", "<cmd>Neotest summary<CR>", opts)
+keymap("n", "<leader>tx", "<cmd>Neotest stop<CR>", opts)
+keymap("n", "<leader>tf", "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<CR>", opts)
+
 -- Normal --
 -- Delete buffer --
 keymap("n", "<C-q>", ":Bdelete<CR>", opts)
 
 -- Line numbers
 keymap("n", "<leader>ll", "<cmd>lua toggle_linenumbers()<CR>", opts)
-
--- Lazygit
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 keymap("n", "<leader>lf", ":Neoformat<CR>", opts)
 -- Lazy UI
@@ -79,8 +84,12 @@ keymap("n", "<leader>fs", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
--- Git
+-- Terminals
 keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
+keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>dd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
+keymap("n", "<leader>bb", "<cmd>lua _BOTTOM_TOGGLE()<CR>", opts)
+keymap("n", "<leader>kk", "<cmd>lua _K9S_TOGGLE()<CR>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
