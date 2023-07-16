@@ -50,7 +50,7 @@ local M = {
 			k9s:toggle()
 		end
 
-		local todo = Terminal:new({ cmd = "nvim ~/notes", hidden = true, direction = "float" })
+		local todo = Terminal:new({ cmd = "nvim ~/OneDrive/Notes/Todo.md", hidden = true, direction = "float" })
 		function _TODO_TOGGLE()
 			todo:toggle()
 		end
