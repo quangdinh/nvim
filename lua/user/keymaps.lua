@@ -90,6 +90,7 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
 keymap("n", "<leader>bb", "<cmd>lua _BOTTOM_TOGGLE()<CR>", opts)
 keymap("n", "<leader>kk", "<cmd>lua _K9S_TOGGLE()<CR>", opts)
+keymap("n", "<leader>td", "<cmd>lua _TODO_TOGGLE()<CR>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

@@ -49,6 +49,11 @@ local M = {
 		function _K9S_TOGGLE()
 			k9s:toggle()
 		end
+
+		local todo = Terminal:new({ cmd = "nvim ~/notes", hidden = true, direction = "float" })
+		function _TODO_TOGGLE()
+			todo:toggle()
+		end
 	end,
 }
 return M
