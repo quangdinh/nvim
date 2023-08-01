@@ -37,9 +37,6 @@ vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
 vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten toggle_todo<CR>")
 vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
 
--- Call insert link automatically when we start typing a link
-vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
-
 -- Delete buffer --
 keymap("n", "<C-q>", ":Bdelete<CR>", opts)
 
