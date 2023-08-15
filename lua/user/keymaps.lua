@@ -15,13 +15,6 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-keymap("n", "<leader>ta", "<cmd>Neotest attach<CR>", opts)
-keymap("n", "<leader>to", "<cmd>Neotest output<CR>", opts)
-keymap("n", "<leader>tp", "<cmd>Neotest output-panel<CR>", opts)
-keymap("n", "<leader>tr", "<cmd>Neotest run<CR>", opts)
-keymap("n", "<leader>ts", "<cmd>Neotest summary<CR>", opts)
-keymap("n", "<leader>tx", "<cmd>Neotest stop<CR>", opts)
-keymap("n", "<leader>tf", "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<CR>", opts)
 
 -- Launch panel if nothing is typed after <leader>z
 vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")

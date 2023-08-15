@@ -129,7 +129,7 @@ local M = {
 					opts = {}, -- merged with defaults from documentation
 				},
 				signature = {
-					enabled = false,
+					enabled = true,
 				},
 				message = {
 					-- Messages shown by lsp servers

@@ -96,17 +96,17 @@ local M = {
       })    
   end
   },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      local cfg = {
-        hint_enable = false, -- virtual hint enable
-        hint_prefix = " ",  -- Panda for parameter, NOTE: for the terminal not support emoji, might crash
-      }
-      require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
-    end
-  }
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   config = function()
+  --     local cfg = {
+  --       hint_enable = true, -- virtual hint enable
+  --       hint_prefix = " ",  -- Panda for parameter, NOTE: for the terminal not support emoji, might crash
+  --     }
+  --     require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
+  --   end
+  -- }
 }
 
 

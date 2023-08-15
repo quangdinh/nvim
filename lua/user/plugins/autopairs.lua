@@ -4,12 +4,12 @@ local M = {
     "hrsh7th/nvim-cmp"
   },
   event = { "BufReadPre", "BufNewFile" },
-  enable_check_bracket_line = false,
   config = function()
     local autopairs = require("nvim-autopairs")
     autopairs.setup({
       fast_wrap = {
         map = '<C-e>',
+        enable_check_bracket_line = false,
         chars = { '{', '[', '(', '"', "'" },
         pattern = [=[[%'%"%>%]%)%}%,]]=],
         end_key = '$',
