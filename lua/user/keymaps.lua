@@ -1,12 +1,12 @@
 -- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
-local opts = { silent = true }
+local opts = {silent = true}
 
 keymap("", " ", "<Nop>", opts)
 vim.g.mapleader = " "
 
---Remap space as leader key
+-- Remap space as leader key
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -14,7 +14,6 @@ vim.g.mapleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
-
 
 -- Launch panel if nothing is typed after <leader>z
 vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")
@@ -29,6 +28,25 @@ vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
 vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
 vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten toggle_todo<CR>")
 vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
+
+-- Neotest
+keymap("n", "<leader>ta", "<cmd>Neotest attach<CR>", opts)
+keymap("n", "<leader>to", "<cmd>Neotest output<CR>", opts)
+keymap("n", "<leader>tp", "<cmd>Neotest output-panel<CR>", opts)
+keymap("n", "<leader>tr", "<cmd>Neotest run<CR>", opts)
+keymap("n", "<leader>ts", "<cmd>Neotest summary<CR>", opts)
+keymap("n", "<leader>tx", "<cmd>Neotest stop<CR>", opts)
+keymap("n", "<leader>tf",
+       "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<CR>", opts)
+
+-- Coverage
+keymap("n", "<leader>cl", "<cmd>CoverageLoad<CR><cmd>CoverageShow<CR>", opts)
+keymap("n", "<leader>cs", "<cmd>CoverageSummary<CR>", opts)
+
+-- Noice
+keymap("n", "<leader>nh", "<cmd>NoiceHistory<CR>", opts)
+keymap("n", "<leader>nl", "<cmd>NoiceLast<CR>", opts)
+keymap("n", "<leader>ne", "<cmd>NoiceErrors<CR>", opts)
 
 -- Delete buffer --
 keymap("n", "<C-q>", ":Bdelete<CR>", opts)
@@ -54,7 +72,6 @@ keymap("n", "<C-j>", ":m .+1<CR>==", opts)
 keymap("n", "<C-k>", ":m .-2<CR>==", opts)
 keymap("v", "<C-j>", ":m -2<CR>gv=gv", opts)
 keymap("v", "<C-k>", ":m'>+<CR>gv=gv", opts)
-
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
