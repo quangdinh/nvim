@@ -39,3 +39,5 @@ vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
+
+vim.g.neovide_input_macos_alt_is_meta = true
