@@ -88,7 +88,7 @@ keymap("n", "U", ":redo<CR>")
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+keymap({"i", "v"}, "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
