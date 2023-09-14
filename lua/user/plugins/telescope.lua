@@ -1,12 +1,11 @@
 local M = {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.1",
-	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
-		telescope.load_extension("ui-select")
 		telescope.setup({
 			defaults = {
 				prompt_prefix = " ",
