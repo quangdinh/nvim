@@ -1,5 +1,5 @@
 vim.opt.backup = false -- creates a backup file
--- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 -- vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
@@ -39,5 +39,6 @@ vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
-
+vim.opt.list = true
+vim.opt.listchars:append "eol:󱞣"
 vim.g.neovide_input_macos_alt_is_meta = true

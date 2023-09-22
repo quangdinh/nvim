@@ -95,6 +95,9 @@ keymap({"i", "v"}, "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+keymap({"n", "v"}, "<leader>y", "\"+y", opts)
+keymap({"n", "v"}, "<leader>p", "\"+p", opts)
+
 -- Plugins --
 
 -- NvimTree
