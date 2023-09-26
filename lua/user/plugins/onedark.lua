@@ -4,9 +4,10 @@ local M = {
 	config = function()
 		local onedark = require("onedarkpro")
 		onedark.setup({
+      style = 'dark',
 			highlights = {
-				NeoTreeNormal = { bg = "#090b0c" },
-				NeoTreeNormalNC = { bg = "#090b0c" },
+				-- NeoTreeNormal = { bg = "#090b0c" },
+				-- NeoTreeNormalNC = { bg = "#090b0c" },
 			},
 
 			colors = {
@@ -29,7 +30,10 @@ local M = {
 				none = "NONE",
 				cursorline = "#26292c", -- This is optional. The default cursorline color is based on the background
 			},
-			options = { cursorline = true },
+			options = {
+        cursorline = true,
+        transparency = true,
+      },
 			styles = {
 				types = "NONE",
 				methods = "NONE",

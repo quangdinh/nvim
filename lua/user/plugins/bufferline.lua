@@ -10,7 +10,7 @@ local M = {
 				close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 				right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 				offsets = { { filetype = "neo-tree", text = "Explorer" } },
-				separator_style = "thick", -- | "thick" | "thin" | { 'any', 'any' },
+				separator_style = "none", -- | "thick" | "thin" | { 'any', 'any' },
 				diagnostics = "nvim_lsp",
 				diagnostics_indicator = function(count, level, diagnostics_dict, context)
 					local s = " "
