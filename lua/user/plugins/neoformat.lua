@@ -1,3 +1,3 @@
-local M = { "sbdchd/neoformat", cmd = "Neoformat" }
+local M = {"sbdchd/neoformat", cmd = "Neoformat"}
 
 return M
