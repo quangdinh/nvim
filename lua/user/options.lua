@@ -36,9 +36,4 @@ vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "MonoLisa Nerd Font:h13" -- the font used in graphical neovim applications
 vim.opt.fillchars.eob = " "
-vim.opt.shortmess:append("c")
-vim.opt.whichwrap:append("<,>,[,],h,l")
-vim.opt.iskeyword:append("-")
-vim.opt.list = true
-vim.opt.listchars:append "eol:󱞣"
 vim.g.neovide_input_macos_alt_is_meta = true

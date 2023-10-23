@@ -11,7 +11,7 @@ local M = {
             },
 
             colors = {
-                bg = "#0d0f10",
+                bg = "#1d1f21",
                 bg_light = "#121416",
                 bg_lighter = "#31373c",
                 fg = "#cfd2d0",
@@ -23,7 +23,7 @@ local M = {
                 blue = "#92b1c9",
                 purple = "#c0a6c7",
                 white = "#fffefe",
-                black = "#060606",
+                black = "#2e2e2e",
                 gray = "#434852",
                 highlight = "#e2be7d",
                 comment = "#7f848e",

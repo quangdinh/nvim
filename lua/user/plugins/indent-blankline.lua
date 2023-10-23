@@ -1,12 +1,17 @@
 local M = {
     "lukas-reineke/indent-blankline.nvim",
-    tag = "v2.20.8",
+    tag = "v3.2.7",
+    main = "ibl",
     config = function()
-        require("indent_blankline").setup({
-            show_current_context = true,
-            show_current_context_start = true,
-            show_end_of_line = true
-        })
+        local hightlight = {"IndentScope"}
+        local hooks = require "ibl.hooks"
+        hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+            vim.api.nvim_set_hl(0, "IndentScope", {fg = "#aed3cf"})
+        end)
+        require("ibl").setup {
+            indent = {char = "▏"},
+            scope = {highlight = hightlight, char = "▎"}
+        }
     end
 }
 

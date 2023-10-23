@@ -1,7 +1,7 @@
 local M = {
     "akinsho/bufferline.nvim",
     dependencies = {"nvim-tree/nvim-web-devicons"},
-    tag = "v4.0.0",
+    tag = "v4.4.0",
     config = function()
         local bufferline = require("bufferline")
         bufferline.setup({
