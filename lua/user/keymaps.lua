@@ -113,7 +113,7 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- Terminals
 keymap("n", "<leader>tt", ":ToggleTerm<CR>", opts)
 keymap("n", "<leader>gg", ":Neogit kind=vsplit<CR>", opts)
--- keymap("n", "<leader>gt", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
 keymap("n", "<leader>bb", "<cmd>lua _BOTTOM_TOGGLE()<CR>", opts)
 keymap("n", "<leader>kk", "<cmd>lua _K9S_TOGGLE()<CR>", opts)
