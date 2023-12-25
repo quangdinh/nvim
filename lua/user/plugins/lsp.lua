@@ -81,14 +81,21 @@ local M = {
             capabilities = require("cmp_nvim_lsp").default_capabilities(
                                capabilities)
 
+            local opts = {on_attach = on_attach, capabilities = capabilities}
+
+            local util = require("lspconfig.util")
+            lspconfig.sourcekit.setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+                root_dir = function(filename, _)
+                    return util.root_pattern("buildserver.json")(filename) or
+                               util.root_pattern("*.xcodeproj", "*.xcworkspace")(
+                                   filename) or util.find_git_ancestor(filename) or
+                               util.root_pattern("Package.siwft")(filename)
+                end
+            })
             masonlsp.setup_handlers({
-                function(server)
-                    local opts = {
-                        on_attach = on_attach,
-                        capabilities = capabilities
-                    }
-                    lspconfig[server].setup(opts)
-                end,
+                function(server) lspconfig[server].setup(opts) end,
                 ["lua_ls"] = function()
                     lspconfig.lua_ls.setup({
                         settings = {Lua = {diagnostics = {globals = {"vim"}}}}
