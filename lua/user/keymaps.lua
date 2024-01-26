@@ -70,8 +70,9 @@ keymap("n", "<leader>wl", ":vertical resize +5<CR>", opts)
 -- Move text up and down
 keymap("n", "<C-j>", ":m .+1<CR>==", opts)
 keymap("n", "<C-k>", ":m .-2<CR>==", opts)
-keymap("v", "<C-j>", ":m -2<CR>gv=gv", opts)
-keymap("v", "<C-k>", ":m'>+<CR>gv=gv", opts)
+
+keymap("v", "<C-j>", ":m'>+<CR>gv=gv", opts)
+keymap("v", "<C-k>", ":m -2<CR>gv=gv", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
