@@ -1,7 +1,7 @@
 -- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
-local opts = {silent = true}
+local opts = { silent = true }
 
 keymap("", " ", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -36,8 +36,7 @@ keymap("n", "<leader>tp", "<cmd>Neotest output-panel<CR>", opts)
 keymap("n", "<leader>tr", "<cmd>Neotest run<CR>", opts)
 keymap("n", "<leader>ts", "<cmd>Neotest summary<CR>", opts)
 keymap("n", "<leader>tx", "<cmd>Neotest stop<CR>", opts)
-keymap("n", "<leader>tf",
-       "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<CR>", opts)
+keymap("n", "<leader>tf", '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
 
 -- Coverage
 keymap("n", "<leader>cl", "<cmd>CoverageLoad<CR><cmd>CoverageShow<CR>", opts)
@@ -89,15 +88,15 @@ keymap("n", "U", ":redo<CR>")
 
 -- Insert --
 -- Press jk fast to enter
-keymap({"i"}, "jk", "<ESC>", opts)
+keymap({ "i" }, "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
-keymap({"n", "v"}, "<leader>y", "\"+y", opts)
-keymap({"n", "v"}, "<leader>p", "\"+p", opts)
+keymap({ "n", "v" }, "<leader>y", '"+y', opts)
+keymap({ "n", "v" }, "<leader>p", '"+p', opts)
 
 -- Plugins --
 

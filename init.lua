@@ -1,5 +1,5 @@
-require "user.options"
-require "user.keymaps"
-require "user.linenumbers"
-require "user.lazy"
-require "user.snippets"
+require("user.options")
+require("user.keymaps")
+require("user.linenumbers")
+require("user.lazy")
+require("user.snippets")
