@@ -38,6 +38,11 @@ keymap("n", "<leader>ts", "<cmd>Neotest summary<CR>", opts)
 keymap("n", "<leader>tx", "<cmd>Neotest stop<CR>", opts)
 keymap("n", "<leader>tf", '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
 
+-- Kulala (Rest)
+keymap("n", "<leader>rr", '<cmd>lua require("kulala").run()<CR>', opts)
+keymap("n", "<leader>rt", '<cmd>lua require("kulala").toggle_view()<CR>', opts)
+keymap("n", "<leader>re", '<cmd>lua require("kulala").set_selected_env()<CR>', opts)
+
 -- Coverage
 keymap("n", "<leader>cl", "<cmd>CoverageLoad<CR><cmd>CoverageShow<CR>", opts)
 keymap("n", "<leader>cs", "<cmd>CoverageSummary<CR>", opts)
@@ -89,6 +94,7 @@ keymap("n", "U", ":redo<CR>")
 -- Insert --
 -- Press jk fast to enter
 keymap({ "i" }, "jk", "<ESC>", opts)
+keymap({ "v" }, "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
