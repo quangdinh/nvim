@@ -3,6 +3,7 @@ local M = {
 	{
 		"leoluz/nvim-dap-go",
 		event = { "BufReadPre", "BufNewFile" },
+    lazy = true,
 		config = function()
 			local dapgo = require("dap-go")
 			dapgo.setup({

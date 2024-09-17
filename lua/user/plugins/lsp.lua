@@ -64,15 +64,7 @@ local M = {
 				vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
 			end
 			local masonlsp = require("mason-lspconfig")
-			masonlsp.setup({
-				ensure_installed = {
-					"golangci_lint_ls",
-					"lua_ls",
-					"tsserver",
-					"yamlls",
-					"gopls",
-				},
-			})
+			masonlsp.setup({})
 
 			-- nvim-cmp supports additional completion capabilities
 			local capabilities = vim.lsp.protocol.make_client_capabilities()

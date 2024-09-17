@@ -15,20 +15,6 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Launch panel if nothing is typed after <leader>z
-vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")
-
--- Most used functions
-vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
-vim.keymap.set("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
-vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
-vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
-vim.keymap.set("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
-vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
-vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
-vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten toggle_todo<CR>")
-vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
-
 -- Neotest
 keymap("n", "<leader>ta", "<cmd>Neotest attach<CR>", opts)
 keymap("n", "<leader>to", "<cmd>Neotest output<CR>", opts)
@@ -117,8 +103,6 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Terminals
-keymap("n", "<leader>tt", ":ToggleTerm<CR>", opts)
-keymap("n", "<leader>gg", ":Neogit kind=vsplit<CR>", opts)
 keymap("n", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
 keymap("n", "<leader>bb", "<cmd>lua _BOTTOM_TOGGLE()<CR>", opts)
