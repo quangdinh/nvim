@@ -28,7 +28,7 @@ local M = {
 				highlight = "#373b41",
 				comment = "#969896",
 				none = "NONE",
-				cursorline = "#282a2e", -- This is optional. The default cursorline color is based on the background
+				cursorline = "#26272b", -- This is optional. The default cursorline color is based on the background
 			},
 			options = { cursorline = true, transparency = true },
 			styles = {

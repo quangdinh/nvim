@@ -1,4 +1,18 @@
 vim.opt.backup = false -- creates a backup file
+if vim.fn.has("wsl") == 1 then
+	vim.g.clipboard = {
+		name = "WslClipboard",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe",
+		},
+		paste = {
+			["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+		},
+		cache_enabled = 0,
+	}
+end
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 -- vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
@@ -34,6 +48,7 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "MonoLisa Nerd Font:h13" -- the font used in graphical neovim applications
+vim.opt.guifont = "MonoLisa Nerd Font:h11" -- the font used in graphical neovim applications
 vim.opt.fillchars.eob = " "
 vim.g.neovide_input_macos_alt_is_meta = true
+vim.g.neovide_transparency = 0.9
