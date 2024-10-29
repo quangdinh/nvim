@@ -15,6 +15,12 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Registers
+keymap("n", "x", "\"_x", opts)
+keymap("n", "X", "\"_X", opts)
+keymap("n", "d", "\"_d", opts)
+keymap("n", "D", "\"_D", opts)
+
 -- Neotest
 keymap("n", "<leader>ta", "<cmd>Neotest attach<CR>", opts)
 keymap("n", "<leader>to", "<cmd>Neotest output<CR>", opts)
