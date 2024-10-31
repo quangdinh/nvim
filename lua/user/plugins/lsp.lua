@@ -60,7 +60,7 @@ local M = {
 				end, opts)
 				vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				vim.keymap.set("n", "<leader>ca", require("actions-preview").code_actions)
+				-- vim.keymap.set("n", "<leader>ca", require("tiny-code-action").code_action(), opts)
 				vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
 			end
 			local masonlsp = require("mason-lspconfig")

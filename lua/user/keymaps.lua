@@ -101,6 +101,7 @@ keymap({ "n", "v" }, "<leader>p", '"+p', opts)
 -- NvimTree
 keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
+keymap("n", "<leader>ca", "<cmd>lua require('tiny-code-action').code_action()<CR>", opts)
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
