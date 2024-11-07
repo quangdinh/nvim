@@ -45,10 +45,7 @@ keymap("n", "<leader>nl", "<cmd>NoiceLast<CR>", opts)
 keymap("n", "<leader>ne", "<cmd>NoiceErrors<CR>", opts)
 
 -- Delete buffer --
-keymap("n", "<C-q>", ":Bdelete<CR>", opts)
-
--- Line numbers
-keymap("n", "<leader>ll", "<cmd>lua toggle_linenumbers()<CR>", opts)
+keymap("n", "<C-q>", "<cmd>lua Snacks.bufdelete()<CR>", opts)
 
 keymap("n", "<leader>lf", ":Neoformat<CR>", opts)
 -- Lazy UI
@@ -110,9 +107,7 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Terminals
-keymap("n", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
-keymap("n", "<leader>bb", "<cmd>lua _BOTTOM_TOGGLE()<CR>", opts)
 keymap("n", "<leader>kk", "<cmd>lua _K9S_TOGGLE()<CR>", opts)
 keymap("n", "<leader>td", "<cmd>lua _TODO_TOGGLE()<CR>", opts)
 

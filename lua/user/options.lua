@@ -52,3 +52,8 @@ vim.opt.guifont = "MonoLisa Nerd Font:h11" -- the font used in graphical neovim 
 vim.opt.fillchars.eob = " "
 vim.g.neovide_input_macos_alt_is_meta = true
 vim.g.neovide_transparency = 0.9
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
