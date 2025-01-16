@@ -15,6 +15,8 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", opts)
+
 -- Registers
 keymap("n", "x", "\"_x", opts)
 keymap("n", "X", "\"_X", opts)
