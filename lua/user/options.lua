@@ -1,23 +1,23 @@
 vim.opt.backup = false -- creates a backup file
-if vim.fn.has("wsl") == 1 then
-	vim.g.clipboard = {
-		name = "win32yank",
-		copy = {
-			["+"] = "win32yank.exe -i --crlf",
-			["*"] = "win32yank.exe -i --crlf",
-		},
-    paste = {
-      ["+"] = "win32yank.exe -o --lf",
-      ["*"] = "win32yank.exe -o --lf",
-    },
-		cache_enabled = 0,
-	}
-end
+-- if vim.fn.has("wsl") == 1 then
+-- 	vim.g.clipboard = {
+-- 		name = "win32yank",
+-- 		copy = {
+-- 			["+"] = "win32yank.exe -i --crlf",
+-- 			["*"] = "win32yank.exe -i --crlf",
+-- 		},
+--     paste = {
+--       ["+"] = "win32yank.exe -o --lf",
+--       ["*"] = "win32yank.exe -o --lf",
+--     },
+-- 		cache_enabled = 0,
+-- 	}
+-- end
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 -- vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
-vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+-- vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
@@ -49,7 +49,7 @@ vim.opt.wrap = false -- display lines as one long line
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "MonoLisa Nerd Font:h11" -- the font used in graphical neovim applications
-vim.opt.fillchars.eob = " "
+-- vim.opt.fillchars.eob = " "
 vim.g.neovide_input_macos_alt_is_meta = true
 vim.g.neovide_transparency = 0.9
 vim.opt.foldmethod = "expr"

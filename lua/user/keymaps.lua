@@ -30,11 +30,6 @@ keymap("n", "<leader>ts", "<cmd>Neotest summary<CR>", opts)
 keymap("n", "<leader>tx", "<cmd>Neotest stop<CR>", opts)
 keymap("n", "<leader>tf", '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
 
--- Kulala (Rest)
-keymap("n", "<leader>rr", '<cmd>lua require("kulala").run()<CR>', opts)
-keymap("n", "<leader>rt", '<cmd>lua require("kulala").toggle_view()<CR>', opts)
-keymap("n", "<leader>re", '<cmd>lua require("kulala").set_selected_env()<CR>', opts)
-
 -- Coverage
 keymap("n", "<leader>cl", "<cmd>CoverageLoad<CR><cmd>CoverageShow<CR>", opts)
 keymap("n", "<leader>cs", "<cmd>CoverageSummary<CR>", opts)
@@ -73,6 +68,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<esc><esc>", "<cmd>nohlsearch<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -81,7 +77,7 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "U", ":redo<CR>")
 
 -- Insert --
--- Press jk fast to enter
+-- Press iu fast to enter
 keymap({ "i" }, "iu", "<ESC>", opts)
 keymap({ "v" }, "iu", "<ESC>", opts)
 

@@ -3,8 +3,7 @@ local M = {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local lualine = require("lualine")
-		local colors = require("onedarkpro.helpers").get_colors()
-
+		local colors = require("tokyonight.colors").setup()
 		local conditions = {
 			buffer_not_empty = function()
 				return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
