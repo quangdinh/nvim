@@ -15,6 +15,8 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", opts)
+
 -- Registers
 keymap("n", "x", "\"_x", opts)
 keymap("n", "X", "\"_X", opts)
@@ -68,7 +70,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-keymap("n", "<esc><esc>", "<cmd>nohlsearch<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
