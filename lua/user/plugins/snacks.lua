@@ -9,6 +9,7 @@ local M = {
 			enabled = true,
 			timeout = 3000,
 		},
+		indent = { enabled = true },
 		quickfile = { enabled = true },
 		statuscolumn = {
 			left = { "mark", "sign" }, -- priority of signs on the left (high to low)
@@ -22,7 +23,11 @@ local M = {
 				patterns = { "GitSign", "MiniDiffSign" },
 			},
 			refresh = 50, -- refresh at most every 50ms
-      enabled = true,
+			enabled = true,
+		},
+		scroll = { enabled = true },
+		git = {
+			enabled = true,
 		},
 		words = { enabled = true },
 		styles = {

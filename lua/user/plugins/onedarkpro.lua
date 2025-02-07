@@ -27,7 +27,7 @@ local M = {
 			options = { cursorline = true, transparency = true },
 			styles = {
 				types = "NONE",
-				methods = "italic",
+				methods = "NONE",
 				numbers = "NONE",
 				strings = "NONE",
 				comments = "italic",
