@@ -136,9 +136,9 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
--- LSP Diagnostic with Trouble
-keymap("n", "<leader>xx", "<cmd>Trouble workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
-keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
-keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
-keymap("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", opts)
+-- -- LSP Diagnostic with Trouble
+-- keymap("n", "<leader>xx", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+-- keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
+-- keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+-- keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+-- keymap("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", opts)
