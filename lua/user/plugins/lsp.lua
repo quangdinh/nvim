@@ -38,7 +38,6 @@ local M = {
 				severity_sort = true,
 			})
 
-			local lspconfig = require("lspconfig")
 			local signs = {
 				Error = "",
 				Warn = "",
@@ -57,19 +56,6 @@ local M = {
 			-- nvim-cmp supports additional completion capabilities
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
-			local opts = { capabilities = capabilities }
-
-			local util = require("lspconfig.util")
-			lspconfig.sourcekit.setup({
-				capabilities = capabilities,
-				root_dir = function(filename, _)
-					return util.root_pattern("buildserver.json")(filename)
-						or util.root_pattern("*.xcodeproj", "*.xcworkspace")(filename)
-						or util.find_git_ancestor(filename)
-						or util.root_pattern("Package.siwft")(filename)
-				end,
-			})
 		end,
 	},
 }
