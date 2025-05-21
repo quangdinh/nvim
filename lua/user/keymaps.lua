@@ -18,10 +18,27 @@ vim.g.mapleader = " "
 keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", opts)
 
 -- Registers
-keymap("n", "x", "\"_x", opts)
-keymap("n", "X", "\"_X", opts)
-keymap("n", "d", "\"_d", opts)
-keymap("n", "D", "\"_D", opts)
+keymap("n", "x", '"_x', opts)
+keymap("n", "X", '"_X', opts)
+keymap("n", "d", '"_d', opts)
+keymap("n", "D", '"_D', opts)
+
+-- LSP
+keymap("n", "gD", vim.lsp.buf.declaration, opts)
+keymap("n", "gd", vim.lsp.buf.definition, opts)
+keymap("n", "gr", vim.lsp.buf.references, opts)
+keymap("n", "K", vim.lsp.buf.hover, opts)
+keymap("n", "gi", vim.lsp.buf.implementation, opts)
+keymap("n", "<leader>ln", vim.diagnostic.goto_next, opts)
+keymap("n", "<leader>lp", vim.diagnostic.goto_prev, opts)
+keymap("n", "<leader>k", vim.lsp.buf.signature_help, opts)
+keymap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
+keymap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+keymap("n", "<leader>wl", function()
+	vim.inspect(vim.lsp.buf.list_workspace_folders())
+end, opts)
+keymap("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+keymap("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
 -- Neotest
 keymap("n", "<leader>ta", "<cmd>Neotest attach<CR>", opts)

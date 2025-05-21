@@ -6,6 +6,7 @@ local M = {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
+		vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, { silent = true })
 		telescope.setup({
 			defaults = {
 				prompt_prefix = " ",
