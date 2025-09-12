@@ -35,7 +35,7 @@ keymap("n", "<leader>k", vim.lsp.buf.signature_help, opts)
 keymap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
 keymap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
 keymap("n", "<leader>wl", function()
-	vim.inspect(vim.lsp.buf.list_workspace_folders())
+  vim.inspect(vim.lsp.buf.list_workspace_folders())
 end, opts)
 keymap("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 keymap("n", "<leader>rn", vim.lsp.buf.rename, opts)
@@ -61,7 +61,8 @@ keymap("n", "<leader>ne", "<cmd>NoiceErrors<CR>", opts)
 -- Delete buffer --
 keymap("n", "<C-q>", "<cmd>lua Snacks.bufdelete()<CR>", opts)
 
-keymap("n", "<leader>lf", ":Neoformat<CR>", opts)
+keymap("n", "<leader>lf", ":Format<CR>", opts)
+keymap("v", "<leader>lf", ":Format<CR>", opts)
 -- Lazy UI
 keymap("n", "<leader>lz", ":Lazy<CR>", opts)
 
@@ -120,11 +121,6 @@ keymap("n", "<leader>fs", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
--- Terminals
-keymap("n", "<leader>dd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
-keymap("n", "<leader>kk", "<cmd>lua _K9S_TOGGLE()<CR>", opts)
-keymap("n", "<leader>td", "<cmd>lua _TODO_TOGGLE()<CR>", opts)
-
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
@@ -135,10 +131,3 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
--- -- LSP Diagnostic with Trouble
--- keymap("n", "<leader>xx", "<cmd>Trouble workspace_diagnostics<cr>", opts)
--- keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
--- keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
--- keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
--- keymap("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", opts)

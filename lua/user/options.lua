@@ -48,12 +48,11 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "MonoLisa Nerd Font:h11" -- the font used in graphical neovim applications
+vim.opt.guifont = "MonoLisa Nerd Font:h14" -- the font used in graphical neovim applications
 -- vim.opt.fillchars.eob = " "
-vim.g.neovide_input_macos_alt_is_meta = true
-vim.g.neovide_transparency = 0.9
+vim.g.neovide_input_macos_option_key_is_meta = true
+vim.g.neovide_opacity = 0.9
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
-
