@@ -1,7 +1,7 @@
 local M = {
 	"andythigpen/nvim-coverage",
 	dependencies = { "nvim-lua/plenary.nvim" },
-  lazy = false,
+	lazy = false,
 	config = function()
 		require("coverage").setup({
 			commands = true, -- create commands
