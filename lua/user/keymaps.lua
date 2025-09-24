@@ -50,7 +50,7 @@ keymap("n", "<leader>tx", "<cmd>Neotest stop<CR>", opts)
 keymap("n", "<leader>tf", '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
 
 -- Coverage
-keymap("n", "<leader>cl", "<cmd>CoverageLoad<CR><cmd>CoverageShow<CR>", opts)
+keymap("n", "<leader>co", "<cmd>CoverageLoad<CR><cmd>CoverageShow<CR>", opts)
 keymap("n", "<leader>cs", "<cmd>CoverageSummary<CR>", opts)
 
 -- Noice
