@@ -13,7 +13,6 @@ local kind_icons = {
   Value = " ",
   Enum = " ",
   Keyword = " ",
-  Snippet = " ",
   Color = " ",
   File = " ",
   Reference = " ",
@@ -32,23 +31,15 @@ local M = {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local cmp = require("cmp")
-      local luasnip = require("luasnip")
       local check_backspace = function()
         local col = vim.fn.col(".") - 1
         return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
       end
       cmp.setup({
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-          end,
-        },
         mapping = cmp.mapping.preset.insert({
           ["<C-k>"] = cmp.mapping.select_prev_item(),
           ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -65,10 +56,6 @@ local M = {
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-            elseif luasnip.expandable() then
-              luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
             elseif check_backspace() then
               fallback()
             else
@@ -78,8 +65,6 @@ local M = {
           ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
             else
               fallback()
             end
@@ -96,7 +81,6 @@ local M = {
             vim_item.menu = ({
               nvim_lsp = "",
               nvim_lua = "",
-              luasnip = "",
               buffer = "",
               path = "",
               emoji = "",
@@ -106,7 +90,6 @@ local M = {
         },
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          { name = "luasnip" },
         }, { { name = "buffer" } }),
       })
     end,
