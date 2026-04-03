@@ -26,7 +26,7 @@ local opts = {
   },
   options = { cursorline = true, transparency = true },
   styles = {
-    types = "NONE",
+    types = "bold",
     methods = "NONE",
     numbers = "NONE",
     strings = "NONE",

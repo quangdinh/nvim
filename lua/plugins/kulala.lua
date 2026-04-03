@@ -3,10 +3,9 @@ vim.pack.add({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  group = _G.augroup("KulalaHTTP"),
+  group = augroup("KulalaHTTP"),
   pattern = "http",
   callback = function()
-    print("Setting up Kulala for HTTP filetype")
     local opts = {
       global_keymaps = true,
       global_keymaps_prefix = "<leader>k",
