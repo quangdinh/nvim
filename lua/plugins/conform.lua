@@ -1,6 +1,6 @@
-local M = {
-  "stevearc/conform.nvim",
-}
+vim.pack.add({
+  "https://github.com/stevearc/conform.nvim",
+})
 
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil
@@ -14,4 +14,5 @@ vim.api.nvim_create_user_command("Format", function(args)
   require("conform").format({ async = true, lsp_format = "fallback", range = range })
 end, { range = true })
 
-return M
+vim.keymap.set("n", "<leader>lf", ":Format<CR>", { silent = true, desc = "Format buffer" })
+vim.keymap.set("v", "<leader>lf", ":Format<CR>", { silent = true, desc = "Format selection" })
