@@ -47,6 +47,12 @@ keymap("n", "<C-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "
 keymap("v", "<C-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down", silent = true })
 keymap("v", "<C-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up", silent = true })
 
+-- Navigation in insert mode
+keymap("i", "<A-h>", "<Left>", { desc = "Move cursor left", silent = true })
+keymap("i", "<A-l>", "<Right>", { desc = "Move cursor right", silent = true })
+keymap("i", "<A-j>", "<Down>", { desc = "Move cursor down", silent = true })
+keymap("i", "<A-k>", "<Up>", { desc = "Move cursor up", silent = true })
+
 -- Goto
 keymap("n", "gl", "$", { desc = "Go to end of line" })
 keymap("n", "gh", "^", { desc = "Go to start of line" })

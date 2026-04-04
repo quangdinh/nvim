@@ -8,6 +8,20 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   end,
 })
 
+local cursor_group = augroup("cursorline")
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+    group = cursor_group,
+    callback = function()
+        vim.opt_local.cursorline = true
+    end,
+})
+
+vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+    group = cursor_group,
+    callback = function()
+        vim.opt_local.cursorline = false
+    end,
+})
 
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
