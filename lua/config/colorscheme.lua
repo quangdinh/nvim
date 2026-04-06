@@ -6,8 +6,6 @@ local opts = {
   style = "dark",
   colors = {
     bg = "#121416",
-    bg_light = "#121416",
-    bg_lighter = "#31373c",
     fg = "#f7f4f1",
     red = "#d77b79",
     orange = "#de935f",
@@ -16,6 +14,7 @@ local opts = {
     cyan = "#9ac8c3",
     blue = "#92b1c9",
     purple = "#c0a6c7",
+
     white = "#fef6ec",
     black = "#121212",
     gray = "#7f858b",
