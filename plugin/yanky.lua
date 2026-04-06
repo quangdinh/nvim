@@ -1,5 +1,5 @@
 vim.pack.add({
-  "https://github.com/gbprod/yanky.nvim",
+  { src = "https://github.com/gbprod/yanky.nvim", load = false },
 })
 
 local _yanky_loaded = false
@@ -8,6 +8,7 @@ local function load_yanky()
   if _yanky_loaded then
     return
   end
+  vim.cmd.packadd("yanky.nvim")
   _yanky_loaded = true
 
   require("yanky").setup({
@@ -24,12 +25,12 @@ end, { desc = "Yank History" })
 
 vim.keymap.set({ "n", "x" }, "y", function()
   load_yanky(); return "<Plug>(YankyYank)"
-end, { expr = true })
+end, { desc = "Yank" })
 
 vim.keymap.set({ "n", "x" }, "p", function()
   load_yanky(); return "<Plug>(YankyPutAfter)"
-end, { expr = true })
+end, { desc = "Paste after" })
 
 vim.keymap.set({ "n", "x" }, "P", function()
   load_yanky(); return "<Plug>(YankyPutBefore)"
-end, { expr = true })
+end, { desc = "Paste before" })

@@ -149,11 +149,6 @@ ins_left({
   end,
 })
 
-local status_ok, navic = pcall(require, "nvim-navic")
-if status_ok then
-  ins_left({ navic.get_location, cond = navic.is_available })
-end
-
 ins_right({ "filetype", color = { fg = colors.cyan, gui = "bold" } })
 
 ins_right({
