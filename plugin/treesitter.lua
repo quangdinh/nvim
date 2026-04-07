@@ -56,7 +56,6 @@ local ts_parsers = {
 }
 
 -- Load on FileType change, so that we don't load the plugin until we know it's needed
-
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("nvim-treesitter-filetype-load"),
   once = true,
@@ -74,7 +73,7 @@ vim.api.nvim_create_autocmd("FileType", {
         lookahead = true,
         selection_modes = {
           ["@parameter.outer"] = "v", -- charwise
-          ["@function.outer"] = "V", -- linewise
+          ["@function.outer"] = "V",  -- linewise
           ["@class.outer"] = "<c-v>", -- blockwise
         },
         include_surrounding_whitespace = false,
@@ -136,7 +135,7 @@ vim.api.nvim_create_autocmd("FileType", {
         end
       end,
     })
-
+    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
     vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 

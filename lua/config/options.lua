@@ -82,7 +82,6 @@ opt.autowrite = true
 -- Folding settings
 opt.smoothscroll = true
 vim.wo.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99 -- Start with all folds open
 
 opt.grepformat = "%f:%l:%c:%m"

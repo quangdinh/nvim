@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     require("blink.cmp").setup({
       keymap = {
         preset = "default",
+        ["<C-h>"] = { "show_documentation", "hide_documentation", "fallback" },
         ["<C-k>"] = { "select_prev", "fallback_to_mappings" },
         ["<C-j>"] = { "select_next", "fallback_to_mappings" },
         ["<Tab>"] = {
@@ -33,7 +34,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
         menu = { border = "single" },
         documentation = { window = { border = "single" } },
       },
-      signature = { window = { border = "single" } },
+      signature = { enabled = true, window = { border = "single" } },
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
       },
