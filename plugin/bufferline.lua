@@ -10,7 +10,7 @@ cmdID = vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "LspAttach" }, {
   callback = function()
     local bufCount = #vim.api.nvim_list_bufs()
     local lspCount = #vim.lsp.get_clients()
-    if bufCount <= 1 or lspCount == 0 then
+    if bufCount <= 1 and lspCount == 0 then
       return
     end
 
