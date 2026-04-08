@@ -45,7 +45,7 @@ Snacks.setup({
     enabled = true,
   },
   terminal = { enabled = true },
-  toggle = { enabled = true },
+  toggle = { which_key = true, notify = true },
   words = { enabled = false },
 
   picker = {
@@ -210,7 +210,6 @@ local keymaps = {
   { "gr",         function() Snacks.picker.lsp_references() end,                          nowait = true,                     desc = "References" },
   { "gI",         function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
   { "gy",         function() Snacks.picker.lsp_type_definitions() end,                    desc = "Goto T[y]pe Definition" },
-  { "<leader>rn", vim.lsp.buf.rename,                                                     desc = "Rename symbol" },
   { "<leader>ss", function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
   { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end,                   desc = "LSP Workspace Symbols" },
   { "gai",        function() Snacks.picker.lsp_incoming_calls() end,                      desc = "C[a]lls Incoming",         has = "callHierarchy/incomingCalls" },
@@ -222,8 +221,8 @@ local keymaps = {
   -- terminal
   { "<c-/>",      function() Snacks.terminal() end,                                       desc = "Toggle Terminal" },
   -- Other
-  { "<leader>ul", function() Snacks.toggle.line_numbers() end,                            desc = "Toggle Line numbers" },
-  { "<leader>uL", function() Snacks.toggle.option("relativenumber") end,                  desc = "Toggle Line numbers" },
+  { "<leader>ll", function() Snacks.toggle.line_number() end,                             desc = "Toggle Line numbers" },
+  { "<leader>ul", function() Snacks.toggle.option("relativenumber") end,                  desc = "Toggle Line numbers" },
   { "<leader>z",  function() Snacks.zen() end,                                            desc = "Toggle Zen Mode" },
   { "<leader>Z",  function() Snacks.zen.zoom() end,                                       desc = "Toggle Zoom" },
   { "<leader>.",  function() Snacks.scratch() end,                                        desc = "Toggle Scratch Buffer" },
@@ -231,8 +230,6 @@ local keymaps = {
   { "<leader>n",  function() Snacks.notifier.show_history() end,                          desc = "Notification History" },
   { "<leader>gg", function() Snacks.lazygit() end,                                        desc = "Lazygit" },
   { "<leader>un", function() Snacks.notifier.hide() end,                                  desc = "Dismiss All Notifications" },
-  { "]]",         function() Snacks.words.jump(vim.v.count1) end,                         desc = "Next Reference",           mode = { "n", "t" } },
-  { "[[",         function() Snacks.words.jump(-vim.v.count1) end,                        desc = "Prev Reference",           mode = { "n", "t" } },
 }
 -- stylua: ignore end
 for _, map in ipairs(keymaps) do
