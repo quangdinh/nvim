@@ -1,4 +1,6 @@
 # Compiled Lua sources
+log.txt
+*.log
 .DS_Store
 luac.out
 
