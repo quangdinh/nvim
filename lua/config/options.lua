@@ -104,9 +104,6 @@ opt.diffopt:append("linematch:60")
 opt.redrawtime = 10000
 opt.maxmempattern = 20000
 
-vim.g.autoformat = true
-vim.g.trouble_lualine = true
-
 opt.jumpoptions = "view"
 opt.laststatus = 3
 opt.list = false

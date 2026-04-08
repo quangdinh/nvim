@@ -2,7 +2,6 @@ vim.pack.add({
   { src = "https://github.com/gbprod/yanky.nvim", load = false },
 })
 
-
 vim.api.nvim_create_autocmd("BufRead", {
   group = augroup("yanky"),
   pattern = "*",
@@ -17,7 +16,6 @@ vim.api.nvim_create_autocmd("BufRead", {
     })
   end,
 })
-
 
 -- Keymaps
 vim.keymap.set({ "n", "x" }, "<leader>p", function()

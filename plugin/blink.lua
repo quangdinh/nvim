@@ -2,10 +2,11 @@ vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.x"), load = false },
 })
 
-vim.api.nvim_create_autocmd("InsertEnter", {
+vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
   pattern = "*",
   once = true,
   callback = function()
+    print("Loading blink.cmp...")
     vim.cmd.packadd("blink.cmp")
     require("blink.cmp").setup({
       keymap = {

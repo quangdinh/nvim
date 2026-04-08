@@ -2,7 +2,7 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig", load = false },
 })
 
-vim.api.nvim_create_autocmd({ "BufRead" }, {
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   group = augroup("lspconfig"),
   once = true,
   pattern = "*",
