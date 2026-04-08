@@ -56,7 +56,7 @@ opt.pumheight = 10
 opt.pumblend = 10
 opt.winblend = 0
 opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 2
+opt.conceallevel = 1
 opt.confirm = false
 opt.concealcursor = ""
 opt.synmaxcol = 300
@@ -109,7 +109,6 @@ opt.laststatus = 3
 opt.list = false
 opt.linebreak = true
 opt.shiftround = true
-opt.shiftwidth = 2
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
 vim.g.markdown_recommended_style = 0

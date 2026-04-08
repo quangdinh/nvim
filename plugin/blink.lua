@@ -6,7 +6,6 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
   pattern = "*",
   once = true,
   callback = function()
-    print("Loading blink.cmp...")
     vim.cmd.packadd("blink.cmp")
     require("blink.cmp").setup({
       keymap = {

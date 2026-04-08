@@ -15,7 +15,17 @@ Snacks.setup({
   indent = { enabled = true },
   input = { enabled = true },
   layout = { enabled = true },
-  notifier = { enabled = true },
+  notifier =
+  {
+    icons = {
+      error = " ",
+      warn = " ",
+      info = " ",
+      debug = " ",
+      trace = " ",
+    },
+    style = "compact",
+  },
   quickfile = { enabled = true },
   scope = { enabled = true },
   scratch = { enabled = true },
@@ -24,8 +34,8 @@ Snacks.setup({
     left = { "mark", "sign" }, -- priority of signs on the left (high to low)
     right = { "fold", "git" }, -- priority of signs on the right (high to low)
     folds = {
-      open = true,           -- show open fold icons
-      git_hl = false,        -- use Git Signs hl for fold icons
+      open = true,             -- show open fold icons
+      git_hl = false,          -- use Git Signs hl for fold icons
     },
     git = {
       -- patterns to match Git signs
@@ -242,3 +252,18 @@ for _, map in ipairs(keymaps) do
   local mode = map.mode or "n"
   vim.keymap.set(mode, map[1], map[2], opts)
 end
+
+
+vim.api.nvim_create_autocmd("LspProgress", {
+  callback = function(ev)
+    local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+    vim.notify(vim.lsp.status(), "info", {
+      id = "lsp_progress",
+      title = "LSP Progress",
+      opts = function(notif)
+        notif.icon = ev.data.params.value.kind == "end" and " "
+            or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+      end,
+    })
+  end,
+})
