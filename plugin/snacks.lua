@@ -1,147 +1,154 @@
 vim.pack.add({
-  "https://github.com/folke/snacks.nvim",
-  "https://github.com/nvim-tree/nvim-web-devicons",
+  { src = "https://github.com/folke/snacks.nvim",           load = false },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons", load = false },
 })
 
-local Snacks = require("snacks")
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = augroup("snacks"),
+  once = true,
+  callback = function()
+    vim.cmd.packadd("nvim-web-devicons")
+    vim.cmd.packadd("snacks.nvim")
+    local Snacks = require("snacks")
+    Snacks.setup({
+      animate = { enabled = true },
+      bigfile = { enabled = true },
+      dashboard = { enabled = false },
+      explorer = { enabled = true, replace_netrw = true },
+      git = { enabled = true },
+      image = { enabled = true },
+      indent = { enabled = true },
+      input = { enabled = true },
+      layout = { enabled = true },
+      notifier =
+      {
+        icons = {
+          error = " ",
+          warn = " ",
+          info = " ",
+          debug = " ",
+          trace = " ",
+        },
+        style = "compact",
+      },
+      quickfile = { enabled = true },
+      scope = { enabled = true },
+      scratch = { enabled = true },
+      scroll = { enabled = true },
+      statuscolumn = {
+        left = { "mark", "sign" }, -- priority of signs on the left (high to low)
+        right = { "fold", "git" }, -- priority of signs on the right (high to low)
+        folds = {
+          open = true,             -- show open fold icons
+          git_hl = false,          -- use Git Signs hl for fold icons
+        },
+        git = {
+          -- patterns to match Git signs
+          patterns = { "GitSign" },
+        },
+        refresh = 50, -- refresh at most every 50ms
+        enabled = true,
+      },
+      terminal = { enabled = true },
+      toggle = { which_key = true, notify = true },
+      words = { enabled = false },
 
-Snacks.setup({
-  animate = { enabled = true },
-  bigfile = { enabled = true },
-  dashboard = { enabled = false },
-  explorer = { enabled = true, replace_netrw = true },
-  git = { enabled = true },
-  image = { enabled = true },
-  indent = { enabled = true },
-  input = { enabled = true },
-  layout = { enabled = true },
-  notifier =
-  {
-    icons = {
-      error = " ",
-      warn = " ",
-      info = " ",
-      debug = " ",
-      trace = " ",
-    },
-    style = "compact",
-  },
-  quickfile = { enabled = true },
-  scope = { enabled = true },
-  scratch = { enabled = true },
-  scroll = { enabled = true },
-  statuscolumn = {
-    left = { "mark", "sign" }, -- priority of signs on the left (high to low)
-    right = { "fold", "git" }, -- priority of signs on the right (high to low)
-    folds = {
-      open = true,             -- show open fold icons
-      git_hl = false,          -- use Git Signs hl for fold icons
-    },
-    git = {
-      -- patterns to match Git signs
-      patterns = { "GitSign" },
-    },
-    refresh = 50, -- refresh at most every 50ms
-    enabled = true,
-  },
-  terminal = { enabled = true },
-  toggle = { which_key = true, notify = true },
-  words = { enabled = false },
-
-  picker = {
-    sources = {
-      files = {
-        hidden = true,
-        ignored = true,
-        win = {
-          input = {
-            keys = {
-              ["<S-h>"] = "toggle_hidden",
-              ["<S-i>"] = "toggle_ignored",
-              ["<S-f>"] = "toggle_follow",
-              ["<C-y>"] = { "yazi_copy_relative_path", mode = { "n", "i" } },
+      picker = {
+        sources = {
+          files = {
+            hidden = true,
+            ignored = true,
+            win = {
+              input = {
+                keys = {
+                  ["<S-h>"] = "toggle_hidden",
+                  ["<S-i>"] = "toggle_ignored",
+                  ["<S-f>"] = "toggle_follow",
+                  ["<C-y>"] = { "yazi_copy_relative_path", mode = { "n", "i" } },
+                },
+              },
+            },
+            exclude = {
+              "**/.git/*",
+              "**/node_modules/*",
+              "**/.yarn/cache/*",
+              "**/.yarn/install*",
+              "**/.yarn/releases/*",
+              "**/.pnpm-store/*",
+              "**/.idea/*",
+              "**/.DS_Store",
+              "build/*",
+              "coverage/*",
+              "dist/*",
+              "hodor-types/*",
+              "**/target/*",
+              "**/public/*",
+              "**/digest*.txt",
+              "**/.node-gyp/**",
+            },
+          },
+          grep = {
+            hidden = true,
+            ignored = true,
+            win = {
+              input = {
+                keys = {
+                  ["<S-h>"] = "toggle_hidden",
+                  ["<S-i>"] = "toggle_ignored",
+                  ["<S-f>"] = "toggle_follow",
+                },
+              },
+            },
+            exclude = {
+              "**/.git/*",
+              "**/node_modules/*",
+              "**/.yarn/cache/*",
+              "**/.yarn/install*",
+              "**/.yarn/releases/*",
+              "**/.pnpm-store/*",
+              "**/.venv/*",
+              "**/.idea/*",
+              "**/.DS_Store",
+              "**/yarn.lock",
+              "build*/*",
+              "coverage/*",
+              "dist/*",
+              "certificates/*",
+              "hodor-types/*",
+              "**/target/*",
+              "**/public/*",
+              "**/digest*.txt",
+              "**/.node-gyp/**",
+            },
+          },
+          grep_buffers = {},
+          explorer = {
+            hidden = true,
+            ignored = true,
+            supports_live = true,
+            auto_close = true,
+            diagnostics = true,
+            diagnostics_open = false,
+            focus = "list",
+            follow_file = true,
+            git_status = true,
+            git_status_open = false,
+            git_untracked = true,
+            jump = { close = true },
+            tree = true,
+            watch = true,
+            exclude = {
+              ".git",
+              ".pnpm-store",
+              ".venv",
+              ".DS_Store",
+              "**/.node-gyp/**",
             },
           },
         },
-        exclude = {
-          "**/.git/*",
-          "**/node_modules/*",
-          "**/.yarn/cache/*",
-          "**/.yarn/install*",
-          "**/.yarn/releases/*",
-          "**/.pnpm-store/*",
-          "**/.idea/*",
-          "**/.DS_Store",
-          "build/*",
-          "coverage/*",
-          "dist/*",
-          "hodor-types/*",
-          "**/target/*",
-          "**/public/*",
-          "**/digest*.txt",
-          "**/.node-gyp/**",
-        },
       },
-      grep = {
-        hidden = true,
-        ignored = true,
-        win = {
-          input = {
-            keys = {
-              ["<S-h>"] = "toggle_hidden",
-              ["<S-i>"] = "toggle_ignored",
-              ["<S-f>"] = "toggle_follow",
-            },
-          },
-        },
-        exclude = {
-          "**/.git/*",
-          "**/node_modules/*",
-          "**/.yarn/cache/*",
-          "**/.yarn/install*",
-          "**/.yarn/releases/*",
-          "**/.pnpm-store/*",
-          "**/.venv/*",
-          "**/.idea/*",
-          "**/.DS_Store",
-          "**/yarn.lock",
-          "build*/*",
-          "coverage/*",
-          "dist/*",
-          "certificates/*",
-          "hodor-types/*",
-          "**/target/*",
-          "**/public/*",
-          "**/digest*.txt",
-          "**/.node-gyp/**",
-        },
-      },
-      grep_buffers = {},
-      explorer = {
-        hidden = true,
-        ignored = true,
-        supports_live = true,
-        auto_close = true,
-        diagnostics = true,
-        diagnostics_open = false,
-        focus = "list",
-        follow_file = true,
-        git_status = true,
-        git_status_open = false,
-        git_untracked = true,
-        jump = { close = true },
-        tree = true,
-        watch = true,
-        exclude = {
-          ".git",
-          ".pnpm-store",
-          ".venv",
-          ".DS_Store",
-          "**/.node-gyp/**",
-        },
-      },
-    },
-  },
+    })
+  end,
 })
 
 -- stylua: ignore start

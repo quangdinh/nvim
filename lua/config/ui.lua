@@ -1,4 +1,3 @@
-vim.opt.cmdheight = 1
 require('vim._core.ui2').enable({
   enable = true,
   msg = {

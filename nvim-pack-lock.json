@@ -69,6 +69,10 @@
       "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
       "src": "https://github.com/folke/snacks.nvim"
     },
+    "tiny-cmdline.nvim": {
+      "rev": "bb068b3a056a427e7db2f37d306b667e5c34258a",
+      "src": "https://github.com/rachartier/tiny-cmdline.nvim"
+    },
     "tiny-code-action.nvim": {
       "rev": "47ec77edf11db531b01d415688b87b1c63bc0aca",
       "src": "https://github.com/rachartier/tiny-code-action.nvim"
