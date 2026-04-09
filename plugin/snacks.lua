@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         },
         git = {
           -- patterns to match Git signs
-          patterns = { "GitSign" },
+          patterns = { "GitSigns", "GitSign" },
         },
         refresh = 50, -- refresh at most every 50ms
         enabled = true,
