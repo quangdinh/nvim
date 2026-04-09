@@ -7,9 +7,16 @@ keymap("", " ", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Buffer management
-keymap("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+keymap("n", "<leader>bb", "<cmd>e #<CR>", { desc = "Switch to Other Buffer" })
 keymap("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
 keymap("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer" })
+
+-- Toggles
+keymap("n", "<leader>ll", ':lua Toggle("relativenumber")<CR>', { desc = "Toggle relative line numbers", silent = true })
+keymap("n", "<leader>tw", ':lua Toggle("wrap")<CR>', { desc = "Toggle line wrap", silent = true })
+
+-- Formatting
+keymap("v", "<leader>fj", ":!jq .<CR>", { desc = "Format selection with JSON", silent = true })
 
 -- Window management
 -- Window splitting
@@ -34,18 +41,11 @@ keymap("n", "d", '"_d', opts)
 keymap("n", "D", '"_D', opts)
 keymap("v", "p", '"_dP', opts)
 
--- Move text up and down
---keymap("n", "<C-j>", ":m .+1<CR>==", opts)
---keymap("n", "<C-k>", ":m .-2<CR>==", opts)
-
---keymap("v", "<C-j>", ":m'>+<CR>gv=gv", opts)
---keymap("v", "<C-k>", ":m -2<CR>gv=gv", opts)
-
 -- Move Lines
-keymap("n", "<C-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down", silent = true })
-keymap("n", "<C-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up", silent = true })
-keymap("v", "<C-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down", silent = true })
-keymap("v", "<C-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up", silent = true })
+keymap("n", "<C-j>", "<cmd>execute 'move .+' . v:count1<CR>==", { desc = "Move Down", silent = true })
+keymap("n", "<C-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<CR>==", { desc = "Move Up", silent = true })
+keymap("v", "<C-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<CR>gv=gv", { desc = "Move Down", silent = true })
+keymap("v", "<C-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<CR>gv=gv", { desc = "Move Up", silent = true })
 
 -- Navigation in insert mode
 keymap("i", "<A-h>", "<Left>", { desc = "Move cursor left", silent = true })

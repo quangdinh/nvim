@@ -221,8 +221,6 @@ local keymaps = {
   -- terminal
   { "<c-/>",      function() Snacks.terminal() end,                                       desc = "Toggle Terminal" },
   -- Other
-  { "<leader>ll", function() Snacks.toggle.line_number() end,                             desc = "Toggle Line numbers" },
-  { "<leader>ul", function() Snacks.toggle.option("relativenumber") end,                  desc = "Toggle Line numbers" },
   { "<leader>z",  function() Snacks.zen() end,                                            desc = "Toggle Zen Mode" },
   { "<leader>Z",  function() Snacks.zen.zoom() end,                                       desc = "Toggle Zoom" },
   { "<leader>.",  function() Snacks.scratch() end,                                        desc = "Toggle Scratch Buffer" },
