@@ -5,16 +5,16 @@ vim.pack.add({
 local cmdID = 0
 -- Load only when there are more than 1 buffer, otherwise it just adds unnecessary overhead
 -- Or load when LSp is attached to a buffer, so that diagnostics can be shown in the bufferline
-cmdID = vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "LspAttach" }, {
+cmdID = vim.api.nvim_create_autocmd({ "BufWinEnter", "LspAttach" }, {
   pattern = "*",
   callback = function()
-    local bufCount = #vim.api.nvim_list_bufs()
+    local bufCount = #vim.fn.getbufinfo({ buflisted = 1 })
     local lspCount = #vim.lsp.get_clients()
     if bufCount <= 1 and lspCount == 0 then
       return
     end
 
-    if lspCount == 1 then
+    if bufCount == 1 and lspCount == 1 then
       local clients = vim.lsp.get_clients()
       local client = clients[1]
       if client.name ~= "Github Copilot" then
