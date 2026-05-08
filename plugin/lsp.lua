@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
       "golangci_lint_ls",
       "gopls",
       "pyright",
+      "sourcekit",
       "html",
       "cssls",
       "vtsls",
