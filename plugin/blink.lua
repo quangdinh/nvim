@@ -9,21 +9,12 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
     vim.cmd.packadd("blink.cmp")
     require("blink.cmp").setup({
       keymap = {
-        preset = "default",
+        preset = "enter",
         ["<C-h>"] = { "show_documentation", "hide_documentation", "fallback" },
-        ["<C-k>"] = { "select_prev", "fallback_to_mappings" },
-        ["<C-j>"] = { "select_next", "fallback_to_mappings" },
-        ["<Tab>"] = {
-          function(cmp)
-            if cmp.snippet_active() then
-              return cmp.accept()
-            else
-              return cmp.select_and_accept()
-            end
-          end,
-          "snippet_forward",
-          "fallback",
-        },
+        ["<C-j>"] = { 'select_next', 'snippet_forward', 'fallback' },
+        ["<C-k>"] = { 'select_prev', 'snippet_backward', 'fallback' },
+        ["<Tab>"] = { 'select_next', 'snippet_forward', 'fallback' },
+        ["<S-Tab>"] = { 'select_prev', 'snippet_backward', 'fallback' },
       },
       appearance = {
         nerd_font_variant = "mono",
